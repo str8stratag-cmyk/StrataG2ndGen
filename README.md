@@ -259,7 +259,7 @@ Option B: Deploy frontend to Vercel/Netlify and point `FRONTEND_URL` env var to 
 ### Railway Free Tier
 - **Compute**: 500 hours/month (plenty for your app)
 - **PostgreSQL**: Included free with your project
-- **Custom domains**: Add your `StrataG.site` domain in Railway settings
+- **Custom domains**: Add your `StrataG.info` domain in Railway settings
 - **No credit card needed** for starter projects
 
 ---
@@ -270,7 +270,7 @@ Option B: Deploy frontend to Vercel/Netlify and point `FRONTEND_URL` env var to 
 Office: 813-540-2469  
 Cell: 813-259-4168  
 Email: Zach@StrataG.site  
-Website: StrataG.site / StrataG.info
+Website: StrataG.info
 
 ---
 
