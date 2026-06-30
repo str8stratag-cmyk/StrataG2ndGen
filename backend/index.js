@@ -65,6 +65,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Root route for Railway default healthcheck
+app.get('/', (req, res) => {
+  res.json({ success: true, status: 'ok', app: 'StrataG2ndGen', timestamp: new Date().toISOString() });
+});
+
 // Health check - START SERVER FIRST, don't block on DB
 let dbConnectionStatus = 'connecting';
 app.get('/api/health', async (req, res) => {
@@ -117,7 +122,7 @@ app.use((err, req, res, next) => {
 initializeWebSocket(io, logger);
 
 // Start server IMMEDIATELY - don't wait for DB
-const PORT = config.port || 4000;
+const PORT = process.env.PORT || 3000;
 httpServer.listen(PORT, () => {
   console.log(`🚀 StrataG2ndGen server running on port ${PORT}`);
   console.log(`📡 Environment: ${config.nodeEnv}`);
