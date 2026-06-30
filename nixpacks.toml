@@ -1,5 +1,0 @@
-# Tell Nixpacks to look for package.json in the backend directory
-# This auto-detects Node.js and installs npm automatically
-
-[variables]
-NIXPACKS_APP_DIR = "backend"

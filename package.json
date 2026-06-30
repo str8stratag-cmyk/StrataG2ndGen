@@ -1,0 +1,13 @@
+{
+  "name": "stratag2ndgen",
+  "version": "2.0.0",
+  "private": true,
+  "description": "StrataG2ndGen AI Emergency Dispatch System",
+  "scripts": {
+    "postinstall": "cd backend && npm install",
+    "start": "cd backend && node index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
