@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0b1120] text-slate-100 font-sans;
+  }
+  
+  ::selection {
+    @apply bg-[#00d2ff] text-[#0b1120];
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-slate-900/80 backdrop-blur-md border border-slate-700/50 rounded-3xl shadow-xl;
+  }
+  
+  .glass-panel-dark {
+    @apply bg-[#131c2f]/80 backdrop-blur-md border border-slate-700/50 rounded-3xl shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 bg-[#00d2ff] hover:bg-[#00b8e6] text-slate-900 font-bold rounded-full transition shadow-lg;
+  }
+  
+  .btn-danger {
+    @apply px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-bold rounded-full transition shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded-full transition;
+  }
+  
+  .input-field {
+    @apply bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-300 focus:outline-none focus:border-[#00d2ff] transition;
+  }
+  
+  .badge-signal4 {
+    @apply px-3 py-1 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 text-[10px] font-bold;
+  }
+  
+  .badge-available {
+    @apply px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold;
+  }
+  
+  .badge-enroute {
+    @apply px-3 py-1 rounded-full bg-[#00d2ff]/20 text-[#00d2ff] border border-[#00d2ff]/30 text-[10px] font-bold;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#00d2ff] to-purple-500 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Leaflet custom styles */
+.leaflet-container {
+  background: #0b1120 !important;
+  border-radius: 1rem;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}

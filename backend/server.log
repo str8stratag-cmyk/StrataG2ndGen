@@ -1,0 +1,68 @@
+2026-06-30 09:23:00 [stratag2ndgen] [32minfo[39m: ✅ WebSocket server initialized 
+✅ Database connected successfully
+2026-06-30 09:23:00 [stratag2ndgen] [32minfo[39m: ✅ Database connected 
+2026-06-30 09:23:00 [stratag2ndgen] [32minfo[39m: 🚀 StrataG2ndGen server running on port 4000 
+2026-06-30 09:23:00 [stratag2ndgen] [32minfo[39m: 📡 Environment: development 
+2026-06-30 09:23:00 [stratag2ndgen] [32minfo[39m: 🌐 Frontend URL: http://localhost:5173 
+2026-06-30 09:23:02 [stratag2ndgen] [32minfo[39m: POST /api/transcription/analyze-text {
+  "ip": "::1"
+}
+2026-06-30 09:23:02 [stratag2ndgen] [32minfo[39m: 🧠 Gemini 2.5: Analyzing text transcript {
+  "length": 71
+}
+2026-06-30 09:51:58 [stratag2ndgen] [32minfo[39m: GET /api/health {
+  "ip": "::1"
+}
+2026-06-30 09:51:58 [stratag2ndgen] [32minfo[39m: GET /api/analytics/dashboard {
+  "ip": "::1"
+}
+2026-06-30 09:52:25 [stratag2ndgen] [32minfo[39m: POST /api/radio-calls {
+  "ip": "::1"
+}
+2026-06-30 09:52:25 [stratag2ndgen] [32minfo[39m: 🧠 Gemini 2.5: Analyzing text transcript {
+  "length": 123
+}
+2026-06-30 09:53:08 [stratag2ndgen] [32minfo[39m: POST /api/transcription/analyze-text {
+  "ip": "::1"
+}
+2026-06-30 09:53:08 [stratag2ndgen] [32minfo[39m: 🧠 Gemini 2.5: Analyzing text transcript {
+  "length": 102
+}
+2026-06-30 09:53:11 [stratag2ndgen] [32minfo[39m: GET /api/incidents {
+  "ip": "::1"
+}
+2026-06-30 10:03:41 [stratag2ndgen] [32minfo[39m: GET /api/health {
+  "ip": "::1"
+}
+2026-06-30 10:04:38 [stratag2ndgen] [32minfo[39m: GET /api/drivers {
+  "ip": "::1"
+}
+2026-06-30 10:04:38 [stratag2ndgen] [32minfo[39m: POST /api/incidents {
+  "ip": "::1"
+}
+2026-06-30 10:05:21 [stratag2ndgen] [32minfo[39m: POST /api/incidents/7dab9952-6b6e-4e3d-9cdb-22dd1406c731/dispatch {
+  "ip": "::1"
+}
+2026-06-30 10:05:21 [stratag2ndgen] [32minfo[39m: 📡 Sending SMS via Vonage {
+  "to": "17277177054",
+  "from": "14157386102"
+}
+(node:1778) [DEP0187] DeprecationWarning: Passing invalid argument types to fs.existsSync is deprecated
+(Use `node --trace-deprecation ...` to show where the warning was created)
+2026-06-30 10:05:21 [stratag2ndgen] [31merror[39m: ❌ SMS send failed {
+  "error": "Some SMS messages failed to send",
+  "to": "17277177054"
+}
+2026-06-30 10:05:21 [stratag2ndgen] [33mwarn[39m: SMS dispatch failed {
+  "error": "Some SMS messages failed to send",
+  "driver": "7e462eb6-7262-47a7-925d-8e817715067f"
+}
+2026-06-30 10:06:05 [stratag2ndgen] [32minfo[39m: GET /api/drivers {
+  "ip": "::1"
+}
+2026-06-30 10:06:05 [stratag2ndgen] [32minfo[39m: GET /api/analytics/dashboard {
+  "ip": "::1"
+}
+2026-06-30 10:06:05 [stratag2ndgen] [32minfo[39m: GET /api/incidents {
+  "ip": "::1"
+}

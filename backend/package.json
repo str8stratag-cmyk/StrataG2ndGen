@@ -1,0 +1,40 @@
+{
+  "name": "stratag2ndgen-backend",
+  "version": "2.0.0",
+  "description": "StrataG2ndGen Dispatch Backend - Gemini 2.5 + Groq + Vonage",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "migrate": "node database/migrate.js",
+    "seed": "node database/seed.js",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@google/genai": "^2.9.0",
+    "@vonage/server-sdk": "^3.27.0",
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.14.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "StrataG Tech Consulting",
+  "license": "PROPRIETARY"
+}
