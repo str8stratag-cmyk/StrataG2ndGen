@@ -1,7 +1,0 @@
-{"error":"","level":"error","message":"❌ Database connection failed","service":"stratag2ndgen","timestamp":"2026-06-30 08:55:59"}
-{"error":"","level":"error","message":"Health check failed","service":"stratag2ndgen","timestamp":"2026-06-30 08:56:01"}
-{"level":"error","message":"Vonage balance check error:","service":"stratag2ndgen","timestamp":"2026-06-30 09:12:45"}
-{"error":"Cannot read properties of undefined (reading 'getBalance')","level":"error","message":"Express error","service":"stratag2ndgen","stack":"TypeError: Cannot read properties of undefined (reading 'getBalance')\n    at file:///Users/collisionautopris/Documents/kimi/workspace/StrataG2ndGen/backend/routes/vonage.js:93:42\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","timestamp":"2026-06-30 09:12:45"}
-{"error":"{\"error\":{\"code\":404,\"message\":\"models/gemini-2.5-flash-preview-05-20 is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\"status\":\"NOT_FOUND\"}}","level":"error","message":"❌ Gemini text analysis failed","service":"stratag2ndgen","timestamp":"2026-06-30 09:15:14"}
-{"error":"Some SMS messages failed to send","level":"error","message":"❌ SMS send failed","service":"stratag2ndgen","timestamp":"2026-06-30 09:17:31","to":"16562151523"}
-{"error":"Some SMS messages failed to send","level":"error","message":"❌ SMS send failed","service":"stratag2ndgen","timestamp":"2026-06-30 10:05:21","to":"17277177054"}

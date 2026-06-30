@@ -1,0 +1,30 @@
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Logs
+backend/logs/
+*.log
+
+# Environment files
+.env
+backend/.env
+frontend/.env
+
+# Build output
+frontend/dist/
+backend/dist/
+
+# Docker volumes
+postgres_data/
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.swp
+*.swo
