@@ -50,7 +50,7 @@ app.use(cors({
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 500, // limit each IP to 500 requests per windowMs
+  max: 500,
   standardHeaders: true,
   legacyHeaders: false,
 });
@@ -65,17 +65,24 @@ app.use((req, res, next) => {
   next();
 });
 
-// Health check
+// Health check - START SERVER FIRST, don't block on DB
+let dbConnectionStatus = 'connecting';
 app.get('/api/health', async (req, res) => {
   try {
-    const db = await initializeDatabase();
-    const client = await db.connect();
-    await client.query('SELECT NOW()');
-    client.release();
-    res.json({ success: true, status: 'healthy', database: 'connected', timestamp: new Date().toISOString() });
+    if (dbConnectionStatus === 'connected') {
+      const db = await initializeDatabase();
+      const client = await db.connect();
+      await client.query('SELECT NOW()');
+      client.release();
+      res.json({ success: true, status: 'healthy', database: 'connected', timestamp: new Date().toISOString() });
+    } else if (dbConnectionStatus === 'connecting') {
+      res.json({ success: true, status: 'starting', database: 'connecting', timestamp: new Date().toISOString() });
+    } else {
+      res.status(503).json({ success: false, status: 'unhealthy', database: 'disconnected', timestamp: new Date().toISOString() });
+    }
   } catch (error) {
     logger.error('Health check failed', { error: error.message });
-    res.status(503).json({ success: false, status: 'unhealthy', database: 'disconnected', error: error.message });
+    res.status(503).json({ success: false, status: 'unhealthy', database: 'error', error: error.message });
   }
 });
 
@@ -109,24 +116,28 @@ app.use((err, req, res, next) => {
 // Initialize WebSocket
 initializeWebSocket(io, logger);
 
-// Start server
-async function startServer() {
+// Start server IMMEDIATELY - don't wait for DB
+const PORT = config.port || 4000;
+httpServer.listen(PORT, () => {
+  console.log(`🚀 StrataG2ndGen server running on port ${PORT}`);
+  console.log(`📡 Environment: ${config.nodeEnv}`);
+  console.log(`🌐 Frontend URL: ${config.frontendUrl}`);
+  console.log(`⏳ Connecting to database...`);
+});
+
+// Connect to database AFTER server starts (non-blocking)
+async function connectDatabase() {
   try {
     await initializeDatabase();
-    logger.info('✅ Database connected');
+    dbConnectionStatus = 'connected';
+    console.log('✅ Database connected successfully');
   } catch (error) {
-    logger.error('❌ Database connection failed', { error: error.message });
-    logger.warn('⚠️ Server starting without database — some features will not work');
+    dbConnectionStatus = 'failed';
+    console.error('❌ Database connection failed:', error.message);
+    console.warn('⚠️ Server running without database - some features will not work');
   }
-
-  const PORT = config.port || 4000;
-  httpServer.listen(PORT, () => {
-    logger.info(`🚀 StrataG2ndGen server running on port ${PORT}`);
-    logger.info(`📡 Environment: ${config.nodeEnv}`);
-    logger.info(`🌐 Frontend URL: ${config.frontendUrl}`);
-  });
 }
 
-startServer();
+connectDatabase();
 
 export default app;
