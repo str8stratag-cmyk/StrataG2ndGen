@@ -179,7 +179,7 @@ export default function App() {
         <AlertTriangle className="h-12 w-12 text-red-400 mx-auto mb-4" />
         <h2 className="text-xl font-bold text-white mb-2">Backend Connection Failed</h2>
         <p className="text-slate-400 mb-4">{error}</p>
-        <p className="text-sm text-slate-500">Make sure the backend server is running on port 4000.</p>
+        <p className="text-sm text-slate-500">Make sure the backend server is running on port 3000.</p>
       </div>
     </div>
   );
